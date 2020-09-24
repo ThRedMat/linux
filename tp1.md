@@ -56,6 +56,8 @@ Une fois cette étape réalisée on va monter les partitions dans des dossiers a
 
 ```
 
+```
+
 [dmathieu@localhost srv]\$ sudo mkfs -t ext4 /dev/data/vol1
 mke2fs 1.42.9 (28-Dec-2013)
 Ne peut évaluer par stat() /dev/data/vol1 --- Aucun fichier ou dossier de ce type
@@ -95,6 +97,7 @@ fichiers : complété
 Ensuite on monte les partitions dans fstab:
 
 ```
+
 [dmathieu@localhost ~]$ sudo mount -av
 /                         : ignoré
 /boot                     : déjà monté
@@ -102,13 +105,17 @@ swap                      : ignoré
 /srv/site1                : déjà monté
 /srv/site2                : déjà monté
 [dmathieu@localhost ~]$
+
 ```
 
 Puis on modifie le fichier fstab en rajoutant les deux lignes suivantes :
 
 ```
-[dmathieu@localhost srv]$ sudo nano /etc/fstab
-/dev/data/vol1                  /srv/site1      ext4    defaults        0 0
-/dev/data/vol2                  /srv/site2      ext4    defaults        0 0
+
+[dmathieu@localhost srv]\$ sudo nano /etc/fstab
+/dev/data/vol1 /srv/site1 ext4 defaults 0 0
+/dev/data/vol2 /srv/site2 ext4 defaults 0 0
+
+```
 
 ```
