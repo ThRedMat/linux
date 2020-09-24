@@ -115,10 +115,20 @@ Puis on modifie le fichier fstab en rajoutant les deux lignes suivantes :
 
 ```
 
-```
+On change le nom de notre vm avec la commande `sudo nano /etc/hostname`
 
 ```
-
+[dmathieu@node1 ~]$ hostname
+node1.cc
 ```
 
+Maintenant on va tester si notre vm a bien accès a internet
+
+```
+[dmathieu@node1 ~]$ sudo nmcli dev
+DEVICE  TYPE      STATE     CONNECTION
+enp0s3  ethernet  connecté  enp0s3
+enp0s8  ethernet  connecté  enp0s8
+lo      loopback  non-géré  --
+[dmathieu@node1 ~]$
 ```
