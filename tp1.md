@@ -132,3 +132,18 @@ enp0s8  ethernet  connecté  enp0s8
 lo      loopback  non-géré  --
 [dmathieu@node1 ~]$
 ```
+
+Ensuite on fait un curl de google.com
+
+```
+[dmathieu@node1 ~]$ sudo curl google.com
+<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
+<TITLE>301 Moved</TITLE></HEAD><BODY>
+<H1>301 Moved</H1>
+The document has moved
+<A HREF="http://www.google.com/">here</A>.
+</BODY></HTML>
+[dmathieu@node1 ~]$
+```
+
+Donc nous avons bien accès à internet.
