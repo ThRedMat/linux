@@ -51,10 +51,9 @@ Maintenant que l'on a crée le disque sur notre vm, on va partitionner le disque
   ACTIVE            '/dev/data/vol1' [1,95 GiB] inherit
   ACTIVE            '/dev/data/vol2' [<2,93 GiB] inherit
 
-Une fois cette étape réalisée on va monter les partitions dans des dossiers appelés site 1 et site 2 :
-
-
 ```
+
+Une fois cette étape réalisée on va monter les partitions dans des dossiers appelés site 1 et site 2 :
 
 ```
 
@@ -92,8 +91,6 @@ fichiers : complété
 
 ```
 
-```
-
 Ensuite on monte les partitions dans fstab:
 
 ```
@@ -115,6 +112,12 @@ Puis on modifie le fichier fstab en rajoutant les deux lignes suivantes :
 [dmathieu@localhost srv]\$ sudo nano /etc/fstab
 /dev/data/vol1 /srv/site1 ext4 defaults 0 0
 /dev/data/vol2 /srv/site2 ext4 defaults 0 0
+
+```
+
+```
+
+```
 
 ```
 
