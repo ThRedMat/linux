@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # DARRIBAU Mathieu
-# 27/09/2020
+# 28/09/2020
 # Backup script
 
 backup_time=$(date +%Y%m%d_%H%M)
