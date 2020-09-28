@@ -259,3 +259,114 @@ success
 success
 [dmathieu@node1 ~]$
 ```
+
+- Prouver que la machine node2 peut joindre les deux sites web.
+
+Site 1
+
+```
+[dmathieu@node2 ~]\$ curl -Lk http://node1.tp1.b2/site1
+
+<!doctype html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <title>Dummy Page</title>
+        [...]
+</head>
+
+<body>
+        <div class="pure-g">
+                <div class="pure-u-1">
+                        <h1>Stay tuned site 1 <h1>
+                        <h2>something new is coming here</h2>
+                        [...]
+                </div>
+        </div>
+</body>
+<script>
+[...]
+</script>
+</html>
+[dmathieu@node2 ~]$
+```
+
+Site 2
+
+[dmathieu@node2 ~]\$ curl -Lk http://node1.tp1.b2/site2
+
+```
+<!doctype html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <title>Dummy Page</title>
+        [...]
+</head>
+
+<body>
+        <div class="pure-g">
+                <div class="pure-u-1">
+                        <h1>Stay tuned site 2 <h1>
+                        <h2>something new is coming here</h2>
+                        [...]
+                </div>
+        </div>
+</body>
+<script>
+[...]
+</script>
+</html>
+[dmathieu@node2 ~]$
+```
+
+## II.Script de sauvegarde
+
+```
+#!/bin/bash
+
+# DARRIBAU Mathieu
+# 27/09/2020
+# Backup script
+
+backup_time=$(date +%Y%m%d_%H%M)
+
+saved_folder_path="${1}"
+
+saved_folder="${saved_folder_path##*/}"
+
+backup_name="${saved_folder}_${backup_time}"
+
+tar -czf $backup_name.tar.gz --absolute-names $saved_folder_path
+
+nbr_site1=`ls -l | grep -c site1_`
+nbr_site2=`ls -l | grep -c site2_`
+
+echo $nbr_site1
+echo $nbr_site2
+
+if [ "$nbr_site1" > 7 ]; then
+        echo "ça fonctionne très bien"
+
+fi
+```
+
+## Monitoring
+
+Installation :
+
+```
+bash <(curl -Ss https://my-netdata.io/kickstart.sh)
+```
+
+```
+tester firewall-cmd --add-port=19999/tcp --permanent firewall-cmd --reload
+```
+
+Pour pour ce qui est de l'envoi de messages sur discord
+
+On lui crée un salon dedié puis on crée un webhook pour y copié le lien puis l'ajouter a notre conf netdata
+
+[dmathieu@node1 ~]$ cat /etc/netdata/health_alarm_notify.conf
+https://discordapp.com/api/webhooks/760166157487046696/KV_uChPKmhRNrsCwAmyXL-xWRztM7295hj7goYYdAtVpcjb9I83K_ig9hCxztxMzPbYJ
+[dmathieu@node1 ~]$
