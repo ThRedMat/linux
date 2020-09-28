@@ -279,10 +279,12 @@ sur les deux vm's
 
 création d'une paire de clés (sur VOTRE PC)
 
+```
 PS C:\Users\Mathieu\.ssh> cat .\known_hosts
 192.168.1.11 ecdsa-sha2-nistp256 [...]=
 192.168.1.12 ecdsa-sha2-nistp256 [...]=
 déposer la clé sur l'utilisateur
+```
 
 Machine 1
 
@@ -303,6 +305,77 @@ Last login: Thu Sep 24 15:09:52 2020 from 192.168.1.10
 Last login: Thu Sep 24 15:09:52 2020 from 192.168.1.10
 [dmathieu@node2 ~]$
 ```
+
+### Firewall
+
+le pare-feu est configuré pour bloquer toutes les connexions exceptées celles qui sont nécessaires
+
+commande firewall-cmd ou iptables
+
+Machine 1
+
+[dmathieu@node1 ~]$ sudo firewall-cmd --list-all
+sudo firewall-cmd --list-all
+public (active)
+target: default
+icmp-block-inversion: no
+interfaces: enp0s3 enp0s8
+sources:
+adminices: dhcpv6-client ssh
+ports:
+protocols:
+masquerade: no
+forward-ports:
+source-ports:
+icmp-blocks:
+rich rules:
+[dmathieu@node1 ~]\$
+Machine 2
+
+[dmathieu@node2 ~]$ sudo firewall-cmd --list-all
+[sudo] password for dmathieu:
+public (active)
+target: default
+icmp-block-inversion: no
+interfaces: enp0s3 enp0s8
+sources:
+adminices: dhcpv6-client ssh
+ports:
+protocols:
+masquerade: no
+forward-ports:
+source-ports:
+icmp-blocks:
+rich rules:
+[dmathieu@node2 ~]\$
+désactiver SELinux
+
+Machine 1
+
+[dmathieu@node1 ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux bapti directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   permissive
+Mode from config file:          permissive
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+[dmathieu@node1 ~]$
+Machine 2
+
+[dmathieu@node2 ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux bapti directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   permissive
+Mode from config file:          permissive
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+[dmathieu@node2 ~]$
 
 ## I. Setup serveur Web
 
