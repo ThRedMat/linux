@@ -293,9 +293,10 @@ Site 1
 
 Site 2
 
+```
 [dmathieu@node2 ~]\$ curl -Lk http://node1.tp1.b2/site2
 
-```
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -351,7 +352,7 @@ if [ "$nbr_site1" > 7 ]; then
 fi
 ```
 
-## Monitoring
+## III.Monitoring
 
 Installation :
 
@@ -365,7 +366,7 @@ tester firewall-cmd --add-port=19999/tcp --permanent firewall-cmd --reload
 
 Pour pour ce qui est de l'envoi de messages sur discord
 
-On lui crée un salon dedié puis on crée un webhook pour y copié le lien puis l'ajouter a notre conf netdata
+On lui crée un salon dédié puis on crée un webhook pour y copié le lien puis l'ajouter a notre conf netdata
 
 ```
 [dmathieu@node1 ~]$ cat /etc/netdata/health_alarm_notify.conf
