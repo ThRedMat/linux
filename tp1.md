@@ -185,12 +185,15 @@ rtt min/avg/max/mdev = 0.330/0.350/0.366/0.022 ms
 
 on remplace par node1.tp1.b2 et node2.tp1.b2
 
+```
 127.0.0.1 localhost localhost.localdomain localhost4 localhost4.localdomain4
 ::1 localhost localhost.localdomain localhost6 localhost6.localdomain6
 192.168.1.11 node1.tp1.b2
 127.0.0.1 localhost localhost.localdomain localhost4 localhost4.localdomain4
 ::1 localhost localhost.localdomain localhost6 localhost6.localdomain6
 192.168.1.12 node2.tp1.b2
+```
+
 puis reboot les 2 vm's pour effectuer le changement
 
 puis on peut voir via la commande hostname pour la premiere vm
