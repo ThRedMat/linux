@@ -183,6 +183,72 @@ PING 192.168.1.11 (192.168.1.11) 56(84) bytes of data.
 rtt min/avg/max/mdev = 0.330/0.350/0.366/0.022 ms
 ```
 
+on remplace par node1.tp1.b2 et node2.tp1.b2
+
+127.0.0.1 localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1 localhost localhost.localdomain localhost6 localhost6.localdomain6
+192.168.1.11 node1.tp1.b2
+127.0.0.1 localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1 localhost localhost.localdomain localhost6 localhost6.localdomain6
+192.168.1.12 node2.tp1.b2
+puis reboot les 2 vm's pour effectuer le changement
+
+puis on peut voir via la commande hostname pour la premiere vm
+
+[dmathieu@node1 ~]\$ hostname
+node1.tp1.b2
+pour la deuxieme vm
+
+[dmathieu@node2 ~]\$ hostname
+node2.tp1.b2
+maintenant nous devons ping via leur noms respectif
+
+nous devons ajouter dans le fichier /etc/hosts
+
+l'adresse ip et le nom de notre vm qui node2.tp1.b2
+
+puis ca fais
+
+[dmathieu@node1 tmp]$ ping node1.tp1.b2
+PING node1.tp1.b2 (10.0.2.15) 56(84) bytes of data.
+64 bytes from node1.tp1.b2 (10.0.2.15): icmp_seq=1 ttl=64 time=0.010 ms
+64 bytes from node1.tp1.b2 (10.0.2.15): icmp_seq=2 ttl=64 time=0.018 ms
+^C
+--- node1.tp1.b2 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1004ms
+rtt min/avg/max/mdev = 0.010/0.014/0.018/0.004 ms
+[dmathieu@node1 tmp]$
+
+et de meme via notre seconde vm's
+
+```
+[dmathieu@node2 ~]\$ ping node1.tp1.b2
+PING node1.tp1.b2 (192.168.1.11) 56(84) bytes of data.
+64 bytes from node1.tp1.b2 (192.168.1.11): icmp_seq=1 ttl=64 time=0.356 ms
+64 bytes from node1.tp1.b2 (192.168.1.11): icmp_seq=2 ttl=64 time=0.349 ms
+64 bytes from node1.tp1.b2 (192.168.1.11): icmp_seq=3 ttl=64 time=0.254 ms
+64 bytes from node1.tp1.b2 (192.168.1.11): icmp_seq=4 ttl=64 time=0.309 ms
+64 bytes from node1.tp1.b2 (192.168.1.11): icmp_seq=5 ttl=64 time=0.293 ms
+64 bytes from node1.tp1.b2 (192.168.1.11): icmp_seq=6 ttl=64 time=0.289 ms
+64 bytes from node1.tp1.b2 (192.168.1.11): icmp_seq=7 ttl=64 time=0.309 ms
+64 bytes from node1.tp1.b2 (192.168.1.11): icmp_seq=8 ttl=64 time=0.286 ms
+^C
+--- node1.tp1.b2 ping statistics ---
+8 packets transmitted, 8 received, 0% packet loss, time 7006ms
+rtt min/avg/max/mdev = 0.254/0.305/0.356/0.037 ms
+
+[mathieu@node2 ~]\$ ping node1.tp1.b2
+PING node1.tp1.b2 (192.168.1.11) 56(84) bytes of data.
+64 bytes from node1.tp1.b2 (192.168.1.11): icmp_seq=1 ttl=64 time=0.252 ms
+64 bytes from node1.tp1.b2 (192.168.1.11): icmp_seq=2 ttl=64 time=0.285 ms
+64 bytes from node1.tp1.b2 (192.168.1.11): icmp_seq=3 ttl=64 time=0.313 ms
+^C
+--- node1.tp1.b2 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2000ms
+rtt min/avg/max/mdev = 0.252/0.283/0.313/0.028 ms
+
+```
+
 Donc on peut ping nos vm entre elles.
 
 ## I. Setup serveur Web
