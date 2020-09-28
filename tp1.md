@@ -261,15 +261,19 @@ Donc on peut ping nos vm entre elles.
 
 Creation de nouveau user avec les droit sudo
 
+```
 [dmathieu@node2 ~]$ useradd siteweb
 [dmathieu@node2 ~]$ sudo visudo
 puis edit les droit sudo en donnant les droits sudo
+```
 
-## Allow bapti to run any commands anywhere
+## Allow Mathieu to run any commands anywhere
 
+```
 %wheel ALL=(ALL) ALL
 siteweb ALL=(ALL) ALL
 sur les deux vm's
+```
 
 - Utilisation que de ssh
   vous n'utilisez QUE ssh pour administrer les machines
