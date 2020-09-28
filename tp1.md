@@ -367,6 +367,8 @@ Pour pour ce qui est de l'envoi de messages sur discord
 
 On lui crée un salon dedié puis on crée un webhook pour y copié le lien puis l'ajouter a notre conf netdata
 
+```
 [dmathieu@node1 ~]$ cat /etc/netdata/health_alarm_notify.conf
 https://discordapp.com/api/webhooks/760166157487046696/KV_uChPKmhRNrsCwAmyXL-xWRztM7295hj7goYYdAtVpcjb9I83K_ig9hCxztxMzPbYJ
 [dmathieu@node1 ~]$
+```
