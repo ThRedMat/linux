@@ -198,20 +198,26 @@ puis reboot les 2 vm's pour effectuer le changement
 
 puis on peut voir via la commande hostname pour la premiere vm
 
+```
 [dmathieu@node1 ~]\$ hostname
 node1.tp1.b2
 pour la deuxieme vm
+```
 
+```
 [dmathieu@node2 ~]\$ hostname
 node2.tp1.b2
-maintenant nous devons ping via leur noms respectif
+```
 
-nous devons ajouter dans le fichier /etc/hosts
+maintenant nous devons ping les vms via leur noms respectif
+
+nous devons ajouter dans le fichier `/etc/hosts`
 
 l'adresse ip et le nom de notre vm qui node2.tp1.b2
 
-puis ca fais
+ce qui donne
 
+```
 [dmathieu@node1 tmp]$ ping node1.tp1.b2
 PING node1.tp1.b2 (10.0.2.15) 56(84) bytes of data.
 64 bytes from node1.tp1.b2 (10.0.2.15): icmp_seq=1 ttl=64 time=0.010 ms
@@ -221,6 +227,7 @@ PING node1.tp1.b2 (10.0.2.15) 56(84) bytes of data.
 2 packets transmitted, 2 received, 0% packet loss, time 1004ms
 rtt min/avg/max/mdev = 0.010/0.014/0.018/0.004 ms
 [dmathieu@node1 tmp]$
+```
 
 et de meme via notre seconde vm's
 
