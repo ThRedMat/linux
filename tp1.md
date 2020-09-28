@@ -320,35 +320,6 @@ Résolution des dépendances
 ---> Le paquet libXau.x86_64 0:1.0.8-2.1.el7 sera installé
 --> Résolution des dépendances terminée
 
-Dépendances résolues
-
-========================================================================================================================
- Package                                   Architecture         Version                        Dépôt              Taille
-========================================================================================================================
-Installation :
- nginx                                     x86_64               1:1.16.1-1.el7                 epel               562 k
-Installation pour dépendances :
- centos-indexhtml                          noarch               7-9.el7.centos                 base                92 k
- dejavu-fonts-common                       noarch               2.33-6.el7                     base                64 k
- dejavu-sans-fonts                         noarch               2.33-6.el7                     base               1.4 M
- fontconfig                                x86_64               2.13.0-4.3.el7                 base               254 k
- fontpackages-filesystem                   noarch               1.44-8.el7                     base               9.9 k
- gd                                        x86_64               2.0.35-26.el7                  base               146 k
- gperftools-libs                           x86_64               2.6.1-1.el7                    base               272 k
- libX11                                    x86_64               1.6.7-2.el7                    base               607 k
- libX11-common                             noarch               1.6.7-2.el7                    base               164 k
- libXau                                    x86_64               1.0.8-2.1.el7                  base                29 k
- libXpm                                    x86_64               3.5.12-1.el7                   base                55 k
- libjpeg-turbo                             x86_64               1.2.90-8.el7                   base               135 k
- libxcb                                    x86_64               1.13-1.el7                     base               214 k
- libxslt                                   x86_64               1.1.28-5.el7                   base               242 k
- nginx-all-modules                         noarch               1:1.16.1-1.el7                 epel                19 k
- nginx-filesystem                          noarch               1:1.16.1-1.el7                 epel                21 k
- nginx-mod-http-image-filter               x86_64               1:1.16.1-1.el7                 epel                30 k
- nginx-mod-http-perl                       x86_64               1:1.16.1-1.el7                 epel                39 k
- nginx-mod-http-xslt-filter                x86_64               1:1.16.1-1.el7                 epel                29 k
- nginx-mod-mail                            x86_64               1:1.16.1-1.el7                 epel                57 k
- nginx-mod-stream                          x86_64               1:1.16.1-1.el7                 epel                84 k
 
 Résumé de la transaction
 ========================================================================================================================
@@ -356,79 +327,6 @@ Installation   1 Paquet (+21 Paquets en dépendance)
 
 Taille totale des téléchargements : 4.5 M
 Taille d'installation : 14 M
-Downloading packages:
-(1/22): fontpackages-filesystem-1.44-8.el7.noarch.rpm                                            | 9.9 kB  00:00:00
-(2/22): dejavu-fonts-common-2.33-6.el7.noarch.rpm                                                |  64 kB  00:00:00
-(3/22): fontconfig-2.13.0-4.3.el7.x86_64.rpm                                                     | 254 kB  00:00:00
-(4/22): centos-indexhtml-7-9.el7.centos.noarch.rpm                                               |  92 kB  00:00:00
-(5/22): gperftools-libs-2.6.1-1.el7.x86_64.rpm                                                   | 272 kB  00:00:00
-(6/22): libXau-1.0.8-2.1.el7.x86_64.rpm                                                          |  29 kB  00:00:00
-(7/22): gd-2.0.35-26.el7.x86_64.rpm                                                              | 146 kB  00:00:00
-(8/22): libXpm-3.5.12-1.el7.x86_64.rpm                                                           |  55 kB  00:00:00
-(9/22): libjpeg-turbo-1.2.90-8.el7.x86_64.rpm                                                    | 135 kB  00:00:00
-(10/22): libX11-common-1.6.7-2.el7.noarch.rpm                                                    | 164 kB  00:00:00
-(11/22): libxcb-1.13-1.el7.x86_64.rpm                                                            | 214 kB  00:00:00
-(12/22): nginx-all-modules-1.16.1-1.el7.noarch.rpm                                               |  19 kB  00:00:00
-(13/22): nginx-filesystem-1.16.1-1.el7.noarch.rpm                                                |  21 kB  00:00:00
-(14/22): nginx-mod-http-image-filter-1.16.1-1.el7.x86_64.rpm                                     |  30 kB  00:00:00
-(15/22): nginx-mod-http-perl-1.16.1-1.el7.x86_64.rpm                                             |  39 kB  00:00:00
-(16/22): nginx-mod-http-xslt-filter-1.16.1-1.el7.x86_64.rpm                                      |  29 kB  00:00:00
-(17/22): libxslt-1.1.28-5.el7.x86_64.rpm                                                         | 242 kB  00:00:01
-(18/22): nginx-1.16.1-1.el7.x86_64.rpm                                                           | 562 kB  00:00:01
-(19/22): nginx-mod-mail-1.16.1-1.el7.x86_64.rpm                                                  |  57 kB  00:00:00
-(20/22): dejavu-sans-fonts-2.33-6.el7.noarch.rpm                                                 | 1.4 MB  00:00:03
-(21/22): libX11-1.6.7-2.el7.x86_64.rpm                                                           | 607 kB  00:00:03
-(22/22): nginx-mod-stream-1.16.1-1.el7.x86_64.rpm                                                |  84 kB  00:00:04
-------------------------------------------------------------------------------------------------------------------------
-Total                                                                                   546 kB/s | 4.5 MB  00:00:08
-Running transaction check
-Running transaction test
-Transaction test succeeded
-Running transaction
-  Installation : fontpackages-filesystem-1.44-8.el7.noarch                                                         1/22
-  Installation : dejavu-fonts-common-2.33-6.el7.noarch                                                             2/22
-  Installation : dejavu-sans-fonts-2.33-6.el7.noarch                                                               3/22
-  Installation : fontconfig-2.13.0-4.3.el7.x86_64                                                                  4/22
-  Installation : gperftools-libs-2.6.1-1.el7.x86_64                                                                5/22
-  Installation : libXau-1.0.8-2.1.el7.x86_64                                                                       6/22
-  Installation : libxcb-1.13-1.el7.x86_64                                                                          7/22
-  Installation : centos-indexhtml-7-9.el7.centos.noarch                                                            8/22
-  Installation : libjpeg-turbo-1.2.90-8.el7.x86_64                                                                 9/22
-  Installation : libxslt-1.1.28-5.el7.x86_64                                                                      10/22
-  Installation : libX11-common-1.6.7-2.el7.noarch                                                                 11/22
-  Installation : libX11-1.6.7-2.el7.x86_64                                                                        12/22
-  Installation : libXpm-3.5.12-1.el7.x86_64                                                                       13/22
-  Installation : gd-2.0.35-26.el7.x86_64                                                                          14/22
-  Installation : 1:nginx-filesystem-1.16.1-1.el7.noarch                                                           15/22
-  Installation : 1:nginx-mod-mail-1.16.1-1.el7.x86_64                                                             16/22
-  Installation : 1:nginx-mod-http-perl-1.16.1-1.el7.x86_64                                                        17/22
-  Installation : 1:nginx-mod-stream-1.16.1-1.el7.x86_64                                                           18/22
-  Installation : 1:nginx-mod-http-xslt-filter-1.16.1-1.el7.x86_64                                                 19/22
-  Installation : 1:nginx-1.16.1-1.el7.x86_64                                                                      20/22
-  Installation : 1:nginx-mod-http-image-filter-1.16.1-1.el7.x86_64                                                21/22
-  Installation : 1:nginx-all-modules-1.16.1-1.el7.noarch                                                          22/22
-  Vérification : fontconfig-2.13.0-4.3.el7.x86_64                                                                  1/22
-  Vérification : 1:nginx-filesystem-1.16.1-1.el7.noarch                                                            2/22
-  Vérification : 1:nginx-mod-mail-1.16.1-1.el7.x86_64                                                              3/22
-  Vérification : 1:nginx-mod-http-perl-1.16.1-1.el7.x86_64                                                         4/22
-  Vérification : fontpackages-filesystem-1.44-8.el7.noarch                                                         5/22
-  Vérification : dejavu-fonts-common-2.33-6.el7.noarch                                                             6/22
-  Vérification : libX11-1.6.7-2.el7.x86_64                                                                         7/22
-  Vérification : libX11-common-1.6.7-2.el7.noarch                                                                  8/22
-  Vérification : libxcb-1.13-1.el7.x86_64                                                                          9/22
-  Vérification : libXpm-3.5.12-1.el7.x86_64                                                                       10/22
-  Vérification : 1:nginx-mod-stream-1.16.1-1.el7.x86_64                                                           11/22
-  Vérification : libxslt-1.1.28-5.el7.x86_64                                                                      12/22
-  Vérification : dejavu-sans-fonts-2.33-6.el7.noarch                                                              13/22
-  Vérification : 1:nginx-1.16.1-1.el7.x86_64                                                                      14/22
-  Vérification : libjpeg-turbo-1.2.90-8.el7.x86_64                                                                15/22
-  Vérification : 1:nginx-all-modules-1.16.1-1.el7.noarch                                                          16/22
-  Vérification : 1:nginx-mod-http-xslt-filter-1.16.1-1.el7.x86_64                                                 17/22
-  Vérification : centos-indexhtml-7-9.el7.centos.noarch                                                           18/22
-  Vérification : 1:nginx-mod-http-image-filter-1.16.1-1.el7.x86_64                                                19/22
-  Vérification : libXau-1.0.8-2.1.el7.x86_64                                                                      20/22
-  Vérification : gperftools-libs-2.6.1-1.el7.x86_64                                                               21/22
-  Vérification : gd-2.0.35-26.el7.x86_64                                                                          22/22
 
 Installé :
   nginx.x86_64 1:1.16.1-1.el7
@@ -457,7 +355,7 @@ Dans le dossier site1
 [dmathieu@node1 ~]$ cd /srv/site1
 [dmathieu@node1 site1]$ sudo touch index.html
 [dmathieu@node1 site1]$ ls
-index.html  lost+found
+index.html
 ```
 
 Dans le dossier site2
@@ -466,6 +364,46 @@ Dans le dossier site2
 [dmathieu@node1 ~]$ cd /srv/site2
 [dmathieu@node1 site2]$ sudo touch index.html
 [dmathieu@node1 site2]$ ls
-index.html  lost+found
+index.html
 [dmathieu@node1 site2]$
+```
+
+## Configuration de NGINX
+
+- les permissions sur ces dossiers doivent être le plus restrictif possible et, ces dossiers doivent appartenir à un utilisateur et un groupe spécifique
+
+```
+[dmathieu@node1 ~]$ sudo ls -al /srv/
+total 8
+drwxr-xr-x.  4 root root   32 Sep 23 17:31 .
+dr-xr-xr-x. 17 root root  237 Sep 22 14:21 ..
+dr--------.  3 web  web  4096 Sep 26 15:39 site1
+dr--------.  3 web  web  4096 Sep 26 15:39 site2
+[dmathieu@node1 ~]
+```
+
+- NGINX doit utiliser un utilisateur dédié que vous avez créé à cet effet
+
+```
+[dmathieu@node1 ~]$ sudo useradd siteweb
+```
+
+- les sites doivent être servis en HTTPS sur le port 443 et en HTTP sur le port 80
+
+```
+[dmathieu@node1 ~]$ sudo firewall-cmd --zone=public --add-port=443/tcp --permanent
+success
+
+[dmathieu@node1 ~]$ sudo firewall-cmd --permanent --zone=public --add-service=https
+success
+
+[dmathieu@node1 ~]$ sudo firewall-cmd --zone=public --add-port=80/tcp --permanent
+success
+
+[dmathieu@node1 ~]$ sudo firewall-cmd --permanent --zone=public --add-service=http
+success
+
+[dmathieu@node1 ~]$ sudo firewall-cmd --reload
+success
+[dmathieu@node1 ~]$
 ```
