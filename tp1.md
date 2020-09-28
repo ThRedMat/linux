@@ -267,9 +267,8 @@ Creation de nouveau user avec les droit sudo
 puis edit les droit sudo en donnant les droits sudo
 ```
 
-## Allow Mathieu to run any commands anywhere
-
 ```
+Allow Mathieu to run any commands anywhere
 %wheel ALL=(ALL) ALL
 siteweb ALL=(ALL) ALL
 sur les deux vm's
