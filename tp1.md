@@ -117,6 +117,20 @@ Puis on modifie le fichier fstab en rajoutant les deux lignes suivantes :
 
 Maintenant on va tester si notre vm a bien accès a internet
 
+On change le nom de nos vm avec la commande `sudo nano /etc/hostname`
+
+```
+[dmathieu@node1 ~]$ hostname
+node1.tp1.b2
+```
+
+et pour la seconde vm
+
+```
+[dmathieu@node2 ~]$ hostname
+node2.tp1.b2
+```
+
 ```
 [dmathieu@node1 ~]$ sudo nmcli dev
 DEVICE  TYPE      STATE     CONNECTION
@@ -170,20 +184,6 @@ rtt min/avg/max/mdev = 0.330/0.350/0.366/0.022 ms
 ```
 
 Donc on peut ping nos vm entre elles.
-
-On change le nom de nos vm avec la commande `sudo nano /etc/hostname`
-
-```
-[dmathieu@node1 ~]$ hostname
-node1.tp1.b2
-```
-
-et pour la seconde vm
-
-```
-[dmathieu@node2 ~]$ hostname
-node2.tp1.b2
-```
 
 ## I. Setup serveur Web
 
