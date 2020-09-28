@@ -196,7 +196,7 @@ on remplace par node1.tp1.b2 et node2.tp1.b2
 
 puis reboot les 2 vm's pour effectuer le changement
 
-puis on peut voir via la commande hostname pour la premiere vm
+on peut voir via la commande hostname que la premiere vm a bien changé de nom
 
 ```
 [dmathieu@node1 ~]\$ hostname
@@ -211,9 +211,7 @@ node2.tp1.b2
 
 maintenant nous devons ping les vms via leur noms respectif
 
-nous devons ajouter dans le fichier `/etc/hosts`
-
-l'adresse ip et le nom de notre vm qui node2.tp1.b2
+nous devons ajouter dans le fichier `/etc/hosts` l'adresse ip et le nom de notre vm qui node2.tp1.b2
 
 ce qui donne
 
@@ -229,7 +227,7 @@ rtt min/avg/max/mdev = 0.010/0.014/0.018/0.004 ms
 [dmathieu@node1 tmp]$
 ```
 
-et de meme via notre seconde vm's
+et on fait la meme via notre seconde vm
 
 ```
 [dmathieu@node2 ~]\$ ping node1.tp1.b2
@@ -261,7 +259,51 @@ rtt min/avg/max/mdev = 0.252/0.283/0.313/0.028 ms
 
 Donc on peut ping nos vm entre elles.
 
+Creation de nouveau user avec les droit sudo
+
+[dmathieu@node2 ~]$ useradd siteweb
+[dmathieu@node2 ~]$ sudo visudo
+puis edit les droit sudo en donnant les droits sudo
+
+## Allow bapti to run any commands anywhere
+
+%wheel ALL=(ALL) ALL
+siteweb ALL=(ALL) ALL
+sur les deux vm's
+
+- Utilisation que de ssh
+  vous n'utilisez QUE ssh pour administrer les machines
+
+création d'une paire de clés (sur VOTRE PC)
+
+PS C:\Users\Mathieu\.ssh> cat .\known_hosts
+192.168.1.11 ecdsa-sha2-nistp256 [...]=
+192.168.1.12 ecdsa-sha2-nistp256 [...]=
+déposer la clé sur l'utilisateur
+
+Machine 1
+
+```
+PS C:\Users\Mathieu> ssh dmathieu@192.168.1.11
+admin1@192.168.1.11's password:
+Last login: Thu Sep 24 14:10:21 2020 from 192.168.1.10
+Last login: Thu Sep 24 14:10:21 2020 from 192.168.1.10
+[dmathieu@node1 ~]$
+```
+
+Machine 2
+
+```
+PS C:\Users\Mathieu> ssh dmathieu@192.168.1.12
+dmathieu@192.168.1.12's password:
+Last login: Thu Sep 24 15:09:52 2020 from 192.168.1.10
+Last login: Thu Sep 24 15:09:52 2020 from 192.168.1.10
+[dmathieu@node2 ~]$
+```
+
 ## I. Setup serveur Web
+
+### Install de nginx sous Centos7
 
 Pour installer NGINX, on doit d'abord installer le package `epel-release` avec la commande `sudo yum install epel-release`
 
