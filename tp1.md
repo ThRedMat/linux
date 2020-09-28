@@ -314,6 +314,7 @@ commande firewall-cmd ou iptables
 
 Machine 1
 
+```
 [dmathieu@node1 ~]$ sudo firewall-cmd --list-all
 sudo firewall-cmd --list-all
 public (active)
@@ -330,8 +331,11 @@ source-ports:
 icmp-blocks:
 rich rules:
 [dmathieu@node1 ~]\$
+```
+
 Machine 2
 
+```
 [dmathieu@node2 ~]$ sudo firewall-cmd --list-all
 [sudo] password for dmathieu:
 public (active)
@@ -348,10 +352,13 @@ source-ports:
 icmp-blocks:
 rich rules:
 [dmathieu@node2 ~]\$
+```
+
 désactiver SELinux
 
 Machine 1
 
+```
 [dmathieu@node1 ~]$ sestatus
 SELinux status:                 enabled
 SELinuxfs mount:                /sys/fs/selinux
@@ -363,8 +370,11 @@ Policy MLS status:              enabled
 Policy deny_unknown status:     allowed
 Max kernel policy version:      31
 [dmathieu@node1 ~]$
+```
+
 Machine 2
 
+```
 [dmathieu@node2 ~]$ sestatus
 SELinux status:                 enabled
 SELinuxfs mount:                /sys/fs/selinux
@@ -376,6 +386,7 @@ Policy MLS status:              enabled
 Policy deny_unknown status:     allowed
 Max kernel policy version:      31
 [dmathieu@node2 ~]$
+```
 
 ## I. Setup serveur Web
 
