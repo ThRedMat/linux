@@ -15,7 +15,7 @@ Vagrant.configure("2")do|config|
   # La ligne suivante permet de désactiver le montage d'un dossier partagé (ne marche pas tout le temps directement suivant vos OS, versions d'OS, etc.)
   config.vm.synced_folder ".", "/vagrant", disabled: true
 
-config.vm.define :node1 do |t|
+config.vm.define :tp2 do |t|
 end
 
 disk = './secondDisk.vdi'
