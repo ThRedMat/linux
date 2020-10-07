@@ -71,11 +71,9 @@ PrivateTmp=true
 
 [Install]
 WantedBy=multi-user.target
-```
 
 Des commandes sont executées quand ce service se lance. Pour chaque commandes le premier argument doit être un chemin absolu vers un executable ou un ficher sans le slash:
 
-```
 ExecStart=/usr/sbin/nginx
 Ses commandes s'execute avant ou après ExecStart:
 
