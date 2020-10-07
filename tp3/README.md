@@ -137,7 +137,9 @@ grep: /run/systemd/transient//etc/systemd/system/*: No such file or directory
 
 ## A. Serveur web
 
-Configuration du fichier serveurtp3.service dans /etc/systemd/system
+Configuration du fichier serveurtp3.service dans /etc/systemd/system :
+
+https://github.com/mAthieu33290/linux/blob/master/tp3/scripts/serveurtp3.service
 
 On tape la commande ```sudo systemctl daemon-reload````pour demander à systemd de relire tous les fichiers afin qu'il découvre le nôtre
 
