@@ -222,9 +222,9 @@ Index site1
 [vagrant@localhost ~]$ sudo vim after_backup.sh
 ```
 
-Le contenu des scripts se trouve sur le git dans scripts_tp/
+Le contenu des scripts se trouve sur le git dans scripts/
 
-Ecrire un fichier .timer systemd Lance la backup toutes les heures :
+On écrit un fichier .timer systemd Lance la backup toutes les heures :
 
 On configure notre timer :
 
@@ -232,7 +232,7 @@ On configure notre timer :
 [vagrant@localhost ~]$ sudo vim /usr/lib/systemd/system/backup.timer
 ```
 
-(Sa config se trouve sur le git dans systemd/units/)
+On retrouve sa config se trouve sur le git dans systemd/units/
 
 On démarre le timer et on le démarre lorsque la machine démarre.
 
