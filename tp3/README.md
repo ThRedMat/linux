@@ -198,9 +198,60 @@ On curl le serveur pour prouver qu'il fonctionne bien :
 
 ## B. Sauvegarde
 
+Tout d'abord on tape la commande : `sudo usermod -aG wheel backup`
+
+Ensuite on configure notre unité de service :
+
+```
+[vagrant@localhost ~]$ sudo vim /etc/systemd/system/backup.service
+```
+
+On trouve la config sur le git dans le dossier systemd/units/
+
+Puis on reload : `sudo systemctl daemon-reload`
+
+On rempli l'index.html pour la forme.
+
+```
+[vagrant@localhost ~]$ sudo vim /srv/site1/index.html
+
+[vagrant@localhost ~]$ cat /srv/site1/index.html
+Index site1
+[vagrant@localhost ~]$ sudo vim pre_backup.sh
+[vagrant@localhost ~]$ sudo vim backup.sh
+[vagrant@localhost ~]$ sudo vim after_backup.sh
+```
+
+Le contenu des scripts se trouve sur le git dans scripts_tp/
+
+Ecrire un fichier .timer systemd Lance la backup toutes les heures :
+
+On configure notre timer :
+
+```
+[vagrant@localhost ~]$ sudo vim /usr/lib/systemd/system/backup.timer
+```
+
+(Sa config se trouve sur le git dans systemd/units/)
+
+On démarre le timer et on le démarre lorsque la machine démarre.
+
+```
+[vagrant@localhost ~]$ sudo systemctl start backup.timer
+[vagrant@localhost ~]$ sudo systemctl enable backup.timer
+On liste les timers pour vérifier qu'il est bien ajouté :
+[vagrant@localhost ~]$ systemctl list-timers
+NEXT                         LEFT     LAST                         PASSED       UNIT                         ACTIVATE
+Wed 2020-10-07 11:00:00 UTC  45s left n/a                          n/a          backup.timer                 backup.s
+Thu 2020-10-08 08:45:14 UTC  21h left Wed 2020-10-07 08:45:14 UTC  2h 13min ago systemd-tmpfiles-clean.timer systemd-
+2 timers listed. Notre backup.timer est bien mis en place.
+```
+
 ## II. Autres fonctionnalités
 
 ### Gestion de boot
+
+Les 3 services les plus lents à démarrer sont :
 
 ```
 network.service
@@ -211,7 +262,6 @@ postfix.service
 ### Gestion de l'heure
 
 ```
-
 [vagrant@localhost ~]\$ timedatectl
 Local time: Wed 2020-10-07 15:29:54 UTC
 Universal time: Wed 2020-10-07 15:29:54 UTC
