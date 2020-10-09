@@ -197,3 +197,108 @@ On curl le serveur pour prouver qu'il fonctionne bien :
 ```
 
 ## B. Sauvegarde
+
+## II. Autres fonctionnalités
+
+### Gestion de boot
+
+```
+network.service
+swapfile.swap
+postfix.service
+```
+
+### Gestion de l'heure
+
+```
+
+[vagrant@localhost ~]\$ timedatectl
+Local time: Wed 2020-10-07 15:29:54 UTC
+Universal time: Wed 2020-10-07 15:29:54 UTC
+RTC time: Wed 2020-10-07 15:26:54
+Time zone: UTC (UTC, +0000)
+NTP enabled: yes
+NTP synchronized: yes
+RTC in local TZ: no
+DST active: n/a
+
+```
+
+On peut voir que l'on est dans un serveur NTP et dans une "Time zone" UTC(UTC +0000).
+
+Maintenant on va changer notre fuseau horaire :
+
+`[vagrant@localhost ~]$ sudo timedatectl set-timezone Europe/Paris`
+
+Puis on revérifie si le changement a bien été effectué :
+
+```
+
+[vagrant@localhost ~]\$ timedatectl
+Local time: Wed 2020-10-07 17:37:46 CEST
+Universal time: Wed 2020-10-07 15:37:46 UTC
+RTC time: Wed 2020-10-07 15:34:46
+Time zone: Europe/Paris (CEST, +0200)
+NTP enabled: yes
+NTP synchronized: yes
+RTC in local TZ: no
+DST active: yes
+Last DST change: DST began at
+Sun 2020-03-29 01:59:59 CET
+Sun 2020-03-29 03:00:00 CEST
+Next DST change: DST ends (the clock jumps one hour backwards) at
+Sun 2020-10-25 02:59:59 CEST
+Sun 2020-10-25 02:00:00 CET
+
+```
+
+Ce qui est bien le cas.
+
+### Gestion des noms et de la résolution de noms
+
+```
+
+[vagrant@localhost ~]$ hostnamectl
+   Static hostname: localhost.localdomain
+         Icon name: computer-vm
+           Chassis: vm
+        Machine ID: 565b4a149af5426f94f622e98dbb36b4
+           Boot ID: 0fd25fd9487e43b986bfd20af80c1231
+    Virtualization: kvm
+  Operating System: CentOS Linux 7 (Core)
+       CPE OS Name: cpe:/o:centos:centos:7
+            Kernel: Linux 3.10.0-1127.19.1.el7.x86_64
+      Architecture: x86-64
+[vagrant@localhost ~]$
+
+```
+
+Donc mon hostname est localhost.localdomain
+
+Maintenant on va changer notre nom de domaine grace a la commande :
+
+` sudo vi /etc/hostname`
+
+une fois fait on reboot la machine
+
+```
+
+[vagrant@tp numéro3 ~]\$ hostnamectl
+Static hostname: tp numéro3
+Icon name: computer-vm
+Chassis: vm
+Machine ID: 565b4a149af5426f94f622e98dbb36b4
+Boot ID: 93d3754a17ad4be3bb12cb81c53ef6d3
+Virtualization: kvm
+Operating System: CentOS Linux 7 (Core)
+CPE OS Name: cpe:/o:centos:centos:7
+Kernel: Linux 3.10.0-1127.19.1.el7.x86_64
+Architecture: x86-64
+
+```
+
+Donc on a bien changé de nom.
+
+```
+
+```
