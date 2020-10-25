@@ -1,3 +1,10 @@
+#!/bin/bash
+
+# DARRIBAU Mathieu
+# 25/10/2020
+# script d'installation de node4
+
+
 sudo yum update -y
 sudo yum install wget git nano epel-release nfs-utils -y
 systemctl enable rpcbind nfs-server
