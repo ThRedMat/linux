@@ -7,7 +7,7 @@ Vagrant.configure("2")do|config|
   config.vm.box_check_update = false
   config.vm.synced_folder ".", "/vagrant", disabled: true
 
-  config.vm.provision "shell", path: "scripts/script_install.sh"
+  config.vm.provision "shell", path: "script/script.sh"
 
 config.vm.define :tp4 do |t|
 end
