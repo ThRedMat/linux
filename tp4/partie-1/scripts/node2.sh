@@ -1,3 +1,9 @@
+#!/bin/bash
+
+# DARRIBAU Mathieu
+# 25/10/2020
+# script d'installation de node2
+
 sudo yum update -y
 sudo yum install wget git nano mariadb-server nfs-utils -y
 sudo systemctl enable mariadb
