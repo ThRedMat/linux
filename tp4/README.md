@@ -2,11 +2,11 @@
 
 ## Prérequis
 
-Lien url
+Lien url : https://github.com/mAthieu33290/linux/tree/master/tp4/prerequis
 
 ## I. Consignes générales
 
-Lien vers le Vagrantfile et les scripts
+Lien vers le Vagrantfile et les scripts : https://github.com/mAthieu33290/linux/tree/master/tp4/partie-1
 
 |     Name     |      IP      |    Role    |
 | :----------: | :----------: | :--------: |
